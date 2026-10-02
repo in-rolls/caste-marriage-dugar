@@ -161,7 +161,7 @@ Within those limits, letters cluster by caste, income pulls them down the ladder
 rich grooms up the ladder, and the trade-off the paper prices lies outside the incomes it tried.
 
 Banerjee, Duflo, Ghatak and Lafortune (2013), reproduced in the sibling repository
-[`for-better-or-caste`](https://github.com/in-rolls/for-better-or-caste), watch the other side of the same
+[`caste-marriage-banerjee`](https://github.com/in-rolls/caste-marriage-banerjee), watch the other side of the same
 newspaper's market five years earlier: real advertisers choosing which letters to pursue. They conclude that
 caste preference is for one's own caste, not for higher castes, which is why they argue it costs little to
 indulge. These letters say the same thing from the writers' side. Their income premium is a price because an
