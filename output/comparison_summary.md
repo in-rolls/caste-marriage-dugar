@@ -1,9 +1,0 @@
-|table            | cells| matched| mismatched|
-|:----------------|-----:|-------:|----------:|
-|Footnote F-tests |    21|      20|          1|
-|Table 2          |    56|      28|         28|
-|Table 3          |    68|      68|          0|
-|Table 4          |    27|      27|          0|
-|Table 5          |    54|      54|          0|
-|Table 5 fit      |     6|       6|          0|
-|Table 6          |    15|      11|          4|

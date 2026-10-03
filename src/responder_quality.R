@@ -5,28 +5,19 @@
 # values, pooling across castes for the quartiles) the choice is stated here.
 
 source("src/functions.R")
+source("src/heterogeneity_functions.R")
 
 letters <- readRDS(paths$letters)
 sample <- analysis_sample(letters)
 
 # Attributes listed in the paper. Ordinal codes are used as numeric scores.
-quality_inputs <- sample |>
-  transmute(
-    letter_id, responder_caste,
-    height_in, age,
-    education = as.numeric(education),
-    complexion = as.numeric(complexion),
-    looks = as.numeric(looks),
-    girl_working = as.numeric(girl_working == 1),
-    unmdaughters,
-    father_absent = as.numeric(father_absent == 1),
-    own_residence = as.numeric(own_house == 1 | own_apartment == 1),
-    own_car = as.numeric(own_car == 1)
-  )
+quality_inputs <- bind_cols(
+  select(sample, letter_id, responder_caste), quality_attributes(sample)
+)
 missing_summary <- quality_inputs |>
   summarise(across(-c(letter_id, responder_caste), ~ sum(is.na(.x)))) |>
   pivot_longer(everything(), names_to = "attribute", values_to = "missing")
-write_table(missing_summary, "quality_missing", digits = 0)
+write_table(missing_summary, "quality_missing")
 
 # Missing values are filled with the attribute median so that no letter is lost;
 # the paper does not say what it did. Complete-case quartiles are also reported.
@@ -36,8 +27,8 @@ scores <- quality_inputs |>
 pca <- prcomp(select(scores, -letter_id, -responder_caste), center = TRUE, scale. = TRUE)
 loadings <- tibble(attribute = rownames(pca$rotation), pc1 = pca$rotation[, 1], pc2 = pca$rotation[, 2])
 variance_share <- tibble(component = seq_along(pca$sdev), variance_share = pca$sdev^2 / sum(pca$sdev^2))
-write_table(loadings, "quality_pca_loadings", digits = 3)
-write_table(variance_share, "quality_pca_variance", digits = 3)
+write_table(loadings, "quality_pca_loadings")
+write_table(variance_share, "quality_pca_variance")
 
 # Orient the first component so that a higher score means the attributes the
 # paper treats as desirable (education, complexion, looks, employment, wealth).
@@ -48,7 +39,7 @@ scores$quartile <- paste0("RQ", ntile(scores$quality, 4))
 quality_by_caste <- scores |>
   count(responder_caste, quartile) |>
   pivot_wider(names_from = quartile, values_from = n)
-write_table(quality_by_caste, "quality_quartiles_by_caste", digits = 0)
+write_table(quality_by_caste, "quality_quartiles_by_caste")
 
 # Interacted LPM: response on 35 groom x quartile dummies, LCG-LI x RQ4 omitted.
 stacked <- stack_letters(sample) |>
@@ -89,12 +80,12 @@ compensation_by_quartile <- bind_rows(lapply(names(fits_q), function(rc) {
       ungroup()
   }))
 }))
-write_table(compensation_by_quartile, "quality_compensation_by_quartile", digits = 3)
+write_table(compensation_by_quartile, "quality_compensation_by_quartile")
 
 quality_wide <- compensation_by_quartile |>
   select(responder_caste, groom_caste, income_level, quartile, compensation_k) |>
   pivot_wider(names_from = quartile, values_from = compensation_k)
-write_table(quality_wide, "quality_compensation_wide", digits = 1)
+write_table(quality_wide, "quality_compensation_wide")
 
 # The claim is monotone: RQ4 needs more than RQ1. Count cells where it holds and
 # report the pooled-quartile version (top half vs bottom half) which rests on
@@ -118,7 +109,7 @@ half_comp <- bind_rows(lapply(c("HC", "MC"), function(rc) {
 })) |>
   select(responder_caste, groom_caste, income_level, half, letters, compensation_k) |>
   pivot_wider(names_from = half, values_from = c(letters, compensation_k))
-write_table(half_comp, "quality_compensation_halves", digits = 1)
+write_table(half_comp, "quality_compensation_halves")
 
 print(loadings)
 print(variance_share)

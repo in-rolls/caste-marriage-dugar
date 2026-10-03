@@ -1,0 +1,2 @@
+file,source,sha256,bytes,values,notes,extracted_values,G22,H22
+oliver/Table 6_tradeoffs.xlsx,Authors worksheet supplied by Oliver; received in this repository October 2026,b80d4ef37c63297b8c8f703344770e9b0d8291eb6a49f47c99c255c612a5c8da,10895,Sheet1!E19:K21,Sheet1!G22:H22,sources/table6_worksheet_values.csv,treat LCG_MI coeff as 0 because it is insig,as probability diff is insig

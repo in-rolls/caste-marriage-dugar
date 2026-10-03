@@ -1,0 +1,76 @@
+specification,responder_caste,attribute_group,group_letters
+retained,HC,T1,162
+retained,HC,T2,157
+retained,HC,T3,159
+retained,LC,T1,92
+retained,LC,T2,89
+retained,LC,T3,90
+retained,MC,T1,125
+retained,MC,T2,124
+retained,MC,T3,125
+edition_1,HC,T1,73
+edition_1,HC,T2,72
+edition_1,HC,T3,73
+edition_1,LC,T1,50
+edition_1,LC,T2,51
+edition_1,LC,T3,56
+edition_1,MC,T1,59
+edition_1,MC,T2,77
+edition_1,MC,T3,73
+edition_2,HC,T1,89
+edition_2,HC,T2,85
+edition_2,HC,T3,86
+edition_2,LC,T1,42
+edition_2,LC,T2,38
+edition_2,LC,T3,34
+edition_2,MC,T1,66
+edition_2,MC,T2,47
+edition_2,MC,T3,52
+all_recorded,HC,T1,205
+all_recorded,HC,T2,188
+all_recorded,HC,T3,180
+all_recorded,LC,T1,110
+all_recorded,LC,T2,115
+all_recorded,LC,T3,103
+all_recorded,MC,T1,160
+all_recorded,MC,T2,157
+all_recorded,MC,T3,148
+excluded,HC,T1,43
+excluded,HC,T2,31
+excluded,HC,T3,21
+excluded,LC,T1,18
+excluded,LC,T2,26
+excluded,LC,T3,13
+excluded,MC,T1,35
+excluded,MC,T2,33
+excluded,MC,T3,23
+no_education,HC,T1,160
+no_education,HC,T2,160
+no_education,HC,T3,158
+no_education,LC,T1,91
+no_education,LC,T2,90
+no_education,LC,T3,90
+no_education,MC,T1,126
+no_education,MC,T2,123
+no_education,MC,T3,125
+complete_case,HC,T1,74
+complete_case,HC,T2,81
+complete_case,HC,T3,105
+complete_case,LC,T1,49
+complete_case,LC,T2,45
+complete_case,LC,T3,58
+complete_case,MC,T1,55
+complete_case,MC,T2,52
+complete_case,MC,T3,84
+education,HC,Bachelor's,267
+education,HC,Below bachelor's,24
+education,HC,Master's or doctorate,185
+education,HC,Missing education,2
+education,LC,Bachelor's,160
+education,LC,Below bachelor's,32
+education,LC,Master's or doctorate,78
+education,LC,Missing education,1
+education,MC,Bachelor's,205
+education,MC,Below bachelor's,37
+education,MC,Master's or doctorate,131
+education,MC,Missing education,1

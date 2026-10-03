@@ -14,12 +14,31 @@ suppressPackageStartupMessages({
 paths <- list(
   lpm = "data/original/lpmdata.dta",
   ads = "data/original/Marriage Ads from newspaper issues.xls",
+  table6_worksheet = "sources/table6_worksheet_values.csv",
   letters = "data/derived/letters.rds",
   letters_csv = "data/derived/letters.csv",
   ads_derived = "data/derived/ads.rds",
   output = "output",
   figs = "figs"
 )
+
+# Conditional on the pair total, independent letter destinations are binomial.
+# Transform its Clopper-Pearson interval to a ratio of expected letter counts.
+contact_count_ratio <- function(other, own, conf_level = 0.95) {
+  counts <- c(other, own)
+  stopifnot(
+    length(other) == 1L, length(own) == 1L,
+    all(is.finite(counts)), all(counts >= 0), all(counts == floor(counts))
+  )
+  if (sum(counts) == 0) {
+    return(c(ratio = NA_real_, lower = NA_real_, upper = NA_real_))
+  }
+  interval <- stats::binom.test(counts, conf.level = conf_level)$conf.int
+  c(
+    ratio = other / own, lower = interval[1] / (1 - interval[1]),
+    upper = interval[2] / (1 - interval[2])
+  )
+}
 
 # Groom design: nine fictitious ads, three castes by three monthly incomes.
 groom_design <- tibble(
@@ -201,6 +220,55 @@ compensation_table <- function(fits, slope = "LI-HI") {
     ungroup()
 }
 
+# Reconstruct the worksheet from rounded fitted coefficients. Its two documented
+# overrides are specific to MCR-LCG; they are not a general significance filter.
+worksheet_compensation <- function(fits, apply_overrides = TRUE) {
+  table6_cells |>
+    rowwise() |>
+    mutate(compensation_k = {
+      b <- round(coef(fits[[responder_caste]]$fit), 4)
+      p <- setNames(vapply(groom_levels, function(g) {
+        unname(b["(Intercept)"] + if (g == groom_reference) 0 else b[coef_name(g)])
+      }, numeric(1)), groom_levels)
+      if (apply_overrides && responder_caste == "MC") {
+        p["LCG-MI"] <- p["LCG-LI"]
+        p["MCG-LI"] <- p["LCG-LI"]
+      }
+      compensation_from_shares(p, responder_caste, groom_caste, income_level)
+    }) |>
+    ungroup()
+}
+
+compensation_wide <- function(cells) {
+  cells |>
+    mutate(pair = paste0(responder_caste, "R-", groom_caste, "G")) |>
+    select(pair, income_level, compensation_k) |>
+    pivot_wider(names_from = income_level, values_from = compensation_k) |>
+    rowwise() |>
+    mutate(mean = mean(c(HI, MI, LI)), sd = sd(c(HI, MI, LI))) |>
+    ungroup()
+}
+
+paper_figure_data <- function(sample) {
+  counts <- sample |>
+    count(responder_caste, groom_caste, income_level, name = "letters") |>
+    complete(responder_caste, groom_caste, income_level, fill = list(letters = 0L))
+  by_income <- counts |>
+    group_by(responder_caste, income_level) |>
+    mutate(denominator = sum(letters), proportion = letters / denominator) |>
+    ungroup()
+  pairs <- tibble(responder_caste = c("HC", "HC", "MC"), groom_caste = c("MC", "LC", "LC"))
+  list(
+    figure1 = filter(by_income, responder_caste == "HC"),
+    figure2 = filter(by_income, responder_caste == "MC", groom_caste != "HC"),
+    figure3 = counts |>
+      inner_join(pairs, by = c("responder_caste", "groom_caste")) |>
+      group_by(responder_caste, groom_caste) |>
+      mutate(denominator = sum(letters), proportion = letters / denominator) |>
+      ungroup()
+  )
+}
+
 # Wald test of a linear restriction between two groom coefficients.
 test_equal <- function(model, vcov, groom_a, groom_b) {
   restriction <- paste(coef_name(groom_a), "=", if (groom_b == groom_reference) "0" else coef_name(groom_b))
@@ -208,10 +276,9 @@ test_equal <- function(model, vcov, groom_a, groom_b) {
   tibble(hypothesis = paste(groom_a, "=", groom_b), f = res$F[2], df2 = res$Res.Df[2], p = res$`Pr(>F)`[2])
 }
 
-write_table <- function(x, name, digits = 4) {
+write_table <- function(x, name) {
   readr_available <- requireNamespace("readr", quietly = TRUE)
   path_csv <- file.path(paths$output, paste0(name, ".csv"))
   if (readr_available) readr::write_csv(x, path_csv) else write.csv(x, path_csv, row.names = FALSE)
-  writeLines(knitr::kable(x, digits = digits, format = "pipe"), file.path(paths$output, paste0(name, ".md")))
   invisible(x)
 }

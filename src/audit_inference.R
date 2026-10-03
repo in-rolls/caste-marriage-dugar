@@ -42,7 +42,7 @@ se_table <- bind_rows(lapply(names(fits), function(caste) {
   )
 })) |>
   mutate(ratio_cluster_to_hc1 = se_cluster_letter / se_hc1)
-write_table(se_table, "audit_se_three_ways", digits = 4)
+write_table(se_table, "audit_se_three_ways")
 
 # 1b. Every footnote test with the three covariance matrices. The multinomial
 # route tests the share difference directly (chi-square with 1 df).
@@ -64,7 +64,7 @@ test_all <- bind_rows(lapply(seq_len(nrow(tests)), function(i) {
     z_multinomial = diff / se, p_multinomial = 2 * pnorm(-abs(diff / se))
   )
 }))
-write_table(test_all, "audit_footnote_tests_three_ways", digits = 4)
+write_table(test_all, "audit_footnote_tests_three_ways")
 
 # 2. Edition stability. For each responder caste, a 9 x 2 table of groom by
 # edition; chi-square test of independence, plus the shares themselves.
@@ -75,7 +75,7 @@ edition_shares <- sample |>
   ungroup() |>
   mutate(groom = factor(groom, levels = groom_levels)) |>
   arrange(responder_caste, groom, edition)
-write_table(edition_shares, "audit_edition_shares", digits = 3)
+write_table(edition_shares, "audit_edition_shares")
 edition_tests <- bind_rows(lapply(c("HC", "MC", "LC"), function(caste) {
   tab <- with(filter(sample, responder_caste == caste), table(groom, edition))
   ct <- suppressWarnings(chisq.test(tab))
@@ -85,7 +85,7 @@ edition_tests <- bind_rows(lapply(c("HC", "MC", "LC"), function(caste) {
     chisq = unname(ct$statistic), df = unname(ct$parameter), p_chisq = ct$p.value, p_fisher_mc = ft$p.value
   )
 }))
-write_table(edition_tests, "audit_edition_tests", digits = 4)
+write_table(edition_tests, "audit_edition_tests")
 # Table 6 by edition: the same compensation computed within each placement.
 fits_by_edition <- lapply(1:2, function(e) {
   st <- stack_letters(filter(sample, edition == e))
@@ -95,7 +95,7 @@ table6_by_edition <- bind_rows(lapply(1:2, function(e) {
   compensation_table(fits_by_edition[[e]]) |> mutate(edition = e)
 })) |>
   pivot_wider(names_from = edition, values_from = compensation_k, names_prefix = "edition_")
-write_table(table6_by_edition, "audit_table6_by_edition", digits = 2)
+write_table(table6_by_edition, "audit_table6_by_edition")
 
 # 3. Uncertainty for Table 6. Delta method on the multinomial shares, and a
 # bootstrap that resamples letters within responder caste (the sampling unit).
@@ -144,7 +144,7 @@ table6_uncertainty <- bind_rows(lapply(seq_len(nrow(table6_cells)), function(i) 
     boot_share_above_100k = mean(bs > 100)
   )
 }))
-write_table(table6_uncertainty, "audit_table6_uncertainty", digits = 2)
+write_table(table6_uncertainty, "audit_table6_uncertainty")
 
 # Contrasts the text draws from Table 6: LC grooms need more than MC grooms at
 # every income (HC responders), and compensation falls as income rises.
@@ -179,7 +179,7 @@ boot_contrasts$estimate <- c(
   compensation_from_shares(p_hc, "HC", "LC", "LI") - compensation_from_shares(p_hc, "HC", "LC", "HI"),
   compensation_from_shares(p_hc, "HC", "MC", "LI") - compensation_from_shares(p_hc, "HC", "MC", "HI")
 )
-write_table(boot_contrasts, "audit_table6_contrasts", digits = 2)
+write_table(boot_contrasts, "audit_table6_contrasts")
 
 # 4. Repeat letters. The file flags 243 letters; the text says 47 non-unique
 # letters from 22 responders were dropped. Recompute Tables 5 and 6 with all 1,366.
@@ -190,11 +190,11 @@ table6_all <- compensation_table(fits_all) |>
   left_join(compensation_table(fits) |> rename(compensation_paper_sample = compensation_k),
     by = c("responder_caste", "groom_caste", "income_level")
   )
-write_table(table6_all, "audit_table6_with_repeat_letters", digits = 2)
+write_table(table6_all, "audit_table6_with_repeat_letters")
 repeat_flow <- letters |>
   count(responder_caste, repeat_letter) |>
   pivot_wider(names_from = repeat_letter, values_from = n, names_prefix = "repeat_")
-write_table(repeat_flow, "audit_sample_flow", digits = 0)
+write_table(repeat_flow, "audit_sample_flow")
 
 print(se_table, n = 30)
 print(test_all, n = 30, width = 150)
