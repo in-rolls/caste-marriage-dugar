@@ -25,7 +25,7 @@ t5_rep <- read_out("table5_lpm") |>
     LC_est = estimate_LC, LC_p = p_hc1_LC
   )
 t5 <- long_compare(published_table5, t5_rep, "term", "Table 5", 0.0001) |>
-  mutate(match = ifelse(quantity == "LC_p", abs(difference) < 0.0006, abs(difference) < 0.0001))
+  mutate(match = ifelse(quantity == "LC_p", round(reproduced, 3) == published, round(reproduced, 4) == published))
 
 t5_fit <- tibble(
   responder_caste = names(published_table5_n),
@@ -37,7 +37,9 @@ t5_fit <- tibble(
   ) |>
   mutate(
     table = "Table 5 fit", difference = reproduced - published,
-    match = ifelse(quantity == "n", difference == 0, abs(difference) < 0.005), .before = 1
+    match = ifelse(quantity == "n", difference == 0,
+      round(reproduced, ifelse(responder_caste == "LC", 3, 2)) == published
+    ), .before = 1
   )
 
 fn <- published_footnote_tests |>
@@ -53,11 +55,20 @@ fn <- published_footnote_tests |>
     ),
     match = ifelse(is.na(f), verdict == verdict_reproduced, abs(difference) < 0.01)
   )
-write_table(fn, "comparison_footnote_tests", digits = 4)
+write_table(fn, "comparison_footnote_tests")
 
-# The paper computed Table 6 from coefficients rounded to four decimals, so
-# agreement to 0.05 thousand rupees is exact agreement.
-t6 <- long_compare(published_table6, read_out("table6_compensation"), "pair", "Table 6", 0.05)
+# The worksheet rounds coefficients before calculating and zeroes two MC terms.
+t6 <- long_compare(published_table6, read_out("table6_worksheet"), "pair", "Table 6", 0.005)
+t6_formula <- long_compare(
+  published_table6, read_out("table6_compensation"),
+  "pair", "Table 6 unrestricted", 0.05
+)
+worksheet_check <- long_compare(
+  read_out("table6_worksheet_source"), read_out("table6_worksheet"),
+  "pair", "Worksheet", 1e-10
+)
+write_table(worksheet_check, "comparison_table6_worksheet")
+stopifnot(nrow(worksheet_check) == 15L, all(worksheet_check$match))
 
 # Height means differ by up to 0.09 in because the paper reads 4.11 as 4 ft 1 in.
 t3 <- long_compare(
@@ -74,18 +85,21 @@ comparison <- bind_rows(
   t4 |> rename(row = groom),
   t5 |> rename(row = term),
   t5_fit |> rename(row = responder_caste),
-  transmute(fn, table, row = paste(responder_caste, hypothesis), quantity = "F", published, reproduced, difference,
-            match),
+  transmute(fn, table,
+    row = paste(responder_caste, hypothesis), quantity = "F", published, reproduced, difference,
+    match
+  ),
   t6 |> rename(row = pair),
+  t6_formula |> rename(row = pair),
   t3 |> rename(row = responder_caste),
   t2 |> rename(row = groom_caste)
 ) |>
   select(table, row, quantity, published, reproduced, difference, match)
-write_table(comparison, "comparison_published", digits = 4)
+write_table(comparison, "comparison_published")
 
 summary_tbl <- comparison |>
   group_by(table) |>
   summarise(cells = n(), matched = sum(match), mismatched = sum(!match))
-write_table(summary_tbl, "comparison_summary", digits = 0)
+write_table(summary_tbl, "comparison_summary")
 print(summary_tbl)
 print(filter(comparison, !match), n = 50, width = 120)

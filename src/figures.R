@@ -1,4 +1,4 @@
-# Figures: the paper's Figures 1 to 3 in one panel, the Table 6 compensation
+# Audit figures: letter shares with a common responder-caste denominator, Table 6 compensation
 # figures with their uncertainty and functional-form range, and letter shares
 # by newspaper edition.
 

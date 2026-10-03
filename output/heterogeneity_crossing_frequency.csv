@@ -1,0 +1,4 @@
+attribute_group,draws,no_crossing,one_crossing,multiple_crossings,equality_interval
+T1,2000,3,1997,0,0
+T2,2000,1844,156,0,0
+T3,2000,2000,0,0,0

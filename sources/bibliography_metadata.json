@@ -1,0 +1,935 @@
+{
+  "checked_on": "2026-10-02",
+  "provider": "Crossref API; publisher-deposited metadata",
+  "records": {
+    "dugar2012": {
+      "DOI": "10.1111/j.1465-7295.2011.00398.x",
+      "title": [
+        "CAN'T BUY ME LOVE? A FIELD EXPERIMENT EXPLORING THE TRADE‐OFF BETWEEN INCOME AND CASTE‐STATUS IN AN INDIAN MATRIMONIAL MARKET"
+      ],
+      "author": [
+        {
+          "given": "SUBHASISH",
+          "family": "DUGAR",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "HAIMANTI",
+          "family": "BHATTACHARYA",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "DAVID",
+          "family": "REILEY",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Economic Inquiry"
+      ],
+      "volume": "50",
+      "issue": "2",
+      "page": "534-550",
+      "published": {
+        "date-parts": [
+          [
+            2011,
+            6,
+            29
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2012,
+            4
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2011,
+            6,
+            29
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.1111/j.1465-7295.2011.00398.x",
+      "type": "journal-article"
+    },
+    "banerjee2013": {
+      "DOI": "10.1257/mic.5.2.33",
+      "title": [
+        "Marry for What? Caste and Mate Selection in Modern India"
+      ],
+      "author": [
+        {
+          "given": "Abhijit",
+          "family": "Banerjee",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Economics, Massachusetts Institute of Technology, 50 Memorial Drive Building E52, Room 252G, Cambridge, MA."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Esther",
+          "family": "Duflo",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Economics, Massachusetts Institute of Technology, 50 Memorial Drive Building E52, Room 252D, Cambridge, MA."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Maitreesh",
+          "family": "Ghatak",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Economics, R530, London School of Economics, Houghton Street, London, UK."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jeanne",
+          "family": "Lafortune",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Instituto de Economía, Pontificia Universidad Católica de Chile, Vicuña MacKenna 4860, Macul, Santiago, Chile."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "American Economic Journal: Microeconomics"
+      ],
+      "volume": "5",
+      "issue": "2",
+      "page": "33-72",
+      "published": {
+        "date-parts": [
+          [
+            2013,
+            5,
+            1
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2013,
+            5,
+            1
+          ]
+        ]
+      },
+      "published-online": null,
+      "URL": "https://doi.org/10.1257/mic.5.2.33",
+      "type": "journal-article"
+    },
+    "hitsch2010matching": {
+      "DOI": "10.1257/aer.100.1.130",
+      "title": [
+        "Matching and Sorting in Online Dating"
+      ],
+      "author": [
+        {
+          "given": "Günter J",
+          "family": "Hitsch",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Booth School of Business, University of Chicago, 5807 S. Woodlawn Ave., Chicago, IL 60637."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Alı",
+          "family": "Hortaçsu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Economics, University of Chicago, 1126 E. 59th Street, Chicago, IL 60637."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Dan",
+          "family": "Ariely",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Fuqua School of Business, Duke University, 1 Towerview Drive, Durham, NC 27708."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "American Economic Review"
+      ],
+      "volume": "100",
+      "issue": "1",
+      "page": "130-163",
+      "published": {
+        "date-parts": [
+          [
+            2010,
+            3,
+            1
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2010,
+            3,
+            1
+          ]
+        ]
+      },
+      "published-online": null,
+      "URL": "https://doi.org/10.1257/aer.100.1.130",
+      "type": "journal-article"
+    },
+    "hitsch2010click": {
+      "DOI": "10.1007/s11129-010-9088-6",
+      "title": [
+        "What makes you click?—Mate preferences in online dating"
+      ],
+      "author": [
+        {
+          "given": "Günter J.",
+          "family": "Hitsch",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ali",
+          "family": "Hortaçsu",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Dan",
+          "family": "Ariely",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Quantitative Marketing and Economics"
+      ],
+      "volume": "8",
+      "issue": "4",
+      "page": "393-427",
+      "published": {
+        "date-parts": [
+          [
+            2010,
+            5,
+            20
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2010,
+            12
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2010,
+            5,
+            20
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.1007/s11129-010-9088-6",
+      "type": "journal-article"
+    },
+    "fisman2008": {
+      "DOI": "10.1111/j.1467-937x.2007.00465.x",
+      "title": [
+        "Racial Preferences in Dating"
+      ],
+      "author": [
+        {
+          "given": "RAYMOND",
+          "family": "FISMAN",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "SHEENA S.",
+          "family": "IYENGAR",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "EMIR",
+          "family": "KAMENICA",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "ITAMAR",
+          "family": "SIMONSON",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Review of Economic Studies"
+      ],
+      "volume": "75",
+      "issue": "1",
+      "page": "117-132",
+      "published": {
+        "date-parts": [
+          [
+            2008,
+            1
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2008,
+            1
+          ]
+        ]
+      },
+      "published-online": null,
+      "URL": "https://doi.org/10.1111/j.1467-937x.2007.00465.x",
+      "type": "journal-article"
+    },
+    "bartos2016": {
+      "DOI": "10.1257/aer.20140571",
+      "title": [
+        "Attention Discrimination: Theory and Field Experiments with Monitoring Information Acquisition"
+      ],
+      "author": [
+        {
+          "given": "Vojtěch",
+          "family": "Bartoš",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "CERGE-EI (a joint workplace of Charles University in Prague and the Economics Institute of the Czech Academy of Sciences), Politických vězňů 7, 111 21 Prague 1, Czech Republic (e-mail: )"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Michal",
+          "family": "Bauer",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "CERGE-EI, Politických vězňů 7, 111 21 Prague 1, Czech Republic, and Institute of Economic Studies, Faculty of Social Sciences, Charles University in Prague (e-mail: )"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Julie",
+          "family": "Chytilová",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Institute of Economic Studies, Faculty of Social Sciences, Charles University in Prague, Opletalova 26, Prague 1, 11000, Czech Republic, and CERGE-EI (e-mail: )"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Filip",
+          "family": "Matějka",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "CERGE-EI, Politických vězňů 7, 111 21 Prague 1, Czech Republic (e-mail: )"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "American Economic Review"
+      ],
+      "volume": "106",
+      "issue": "6",
+      "page": "1437-1475",
+      "published": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2016,
+            6,
+            1
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.1257/aer.20140571",
+      "type": "journal-article"
+    },
+    "agarwal2026": {
+      "DOI": "10.1093/restud/rdaf093",
+      "title": [
+        "Demand Analysis under Latent Choice Constraints"
+      ],
+      "author": [
+        {
+          "given": "Nikhil",
+          "family": "Agarwal",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Economics, MIT and NBER, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Paulo",
+          "family": "Somaini",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Graduate School of Business, Stanford University and NBER , USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Review of Economic Studies"
+      ],
+      "volume": "93",
+      "issue": "4",
+      "page": "2215-2249",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            10,
+            29
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            7
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2025,
+            10,
+            29
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.1093/restud/rdaf093",
+      "type": "journal-article"
+    },
+    "abaluck2021": {
+      "DOI": "10.1093/qje/qjab008",
+      "title": [
+        "What do Consumers Consider Before They Choose? Identification from Asymmetric Demand Responses"
+      ],
+      "author": [
+        {
+          "given": "Jason",
+          "family": "Abaluck",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Yale University, United States"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Abi",
+          "family": "Adams-Prassl",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Oxford, United Kingdom"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "The Quarterly Journal of Economics"
+      ],
+      "volume": "136",
+      "issue": "3",
+      "page": "1611-1663",
+      "published": {
+        "date-parts": [
+          [
+            2021,
+            3,
+            13
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2021,
+            6,
+            30
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            3,
+            13
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.1093/qje/qjab008",
+      "type": "journal-article"
+    },
+    "barseghyan2021": {
+      "DOI": "10.3982/ecta17448",
+      "title": [
+        "Heterogeneous Choice Sets and Preferences"
+      ],
+      "author": [
+        {
+          "given": "Levon",
+          "family": "Barseghyan",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Economics, Cornell University"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Maura",
+          "family": "Coughlin",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Economics, Rice University"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Francesca",
+          "family": "Molinari",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Economics, Cornell University"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Joshua C.",
+          "family": "Teitelbaum",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Law Center, Georgetown University"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Econometrica"
+      ],
+      "volume": "89",
+      "issue": "5",
+      "page": "2015-2048",
+      "published": {
+        "date-parts": [
+          [
+            2021
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2021
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.3982/ecta17448",
+      "type": "journal-article"
+    },
+    "kline2021": {
+      "DOI": "10.3982/ecta17489",
+      "title": [
+        "Reasonable Doubt: Experimental Detection of Job‐Level Employment Discrimination"
+      ],
+      "author": [
+        {
+          "given": "Patrick",
+          "family": "Kline",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Economics, UC Berkeley"
+            },
+            {
+              "name": "NBER"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Christopher",
+          "family": "Walters",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Economics, UC Berkeley"
+            },
+            {
+              "name": "NBER"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Econometrica"
+      ],
+      "volume": "89",
+      "issue": "2",
+      "page": "765-792",
+      "published": {
+        "date-parts": [
+          [
+            2021
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2021
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.3982/ecta17489",
+      "type": "journal-article"
+    },
+    "johari2022": {
+      "DOI": "10.1287/mnsc.2021.4247",
+      "title": [
+        "Experimental Design in Two-Sided Platforms: An Analysis of Bias"
+      ],
+      "author": [
+        {
+          "given": "Ramesh",
+          "family": "Johari",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Management Science and Engineering, Stanford University, Stanford, California 94305"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-0801-4015",
+          "authenticated-orcid": false,
+          "given": "Hannah",
+          "family": "Li",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Management Science and Engineering, Stanford University, Stanford, California 94305"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Inessa",
+          "family": "Liskovich",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Airbnb Inc., San Francisco, California 94117"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6111-507X",
+          "authenticated-orcid": false,
+          "given": "Gabriel Y.",
+          "family": "Weintraub",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Graduate School of Business, Stanford University, Stanford, California 94305"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Management Science"
+      ],
+      "volume": "68",
+      "issue": "10",
+      "page": "7069-7089",
+      "published": {
+        "date-parts": [
+          [
+            2022,
+            10
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2022,
+            10
+          ]
+        ]
+      },
+      "URL": "https://doi.org/10.1287/mnsc.2021.4247",
+      "type": "journal-article"
+    }
+  }
+}

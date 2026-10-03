@@ -19,7 +19,7 @@ segments <- bind_rows(lapply(c("LI-HI", "LI-MI", "MI-HI"), function(s) {
   compensation_table(fits, slope = s) |> mutate(slope = s)
 })) |>
   pivot_wider(names_from = slope, values_from = compensation_k)
-write_table(segments, "audit_table6_segment_slopes", digits = 2)
+write_table(segments, "audit_table6_segment_slopes")
 
 # 2. Log-income and multinomial logit. Fit share ~ f(income) within the lower
 # caste's three grooms and solve for the income at which the lower-caste share
@@ -53,7 +53,7 @@ alt_forms <- table6_cells |>
   left_join(compensation_table(fits) |> rename(compensation_paper_k = compensation_k),
     by = c("responder_caste", "groom_caste", "income_level")
   )
-write_table(alt_forms, "audit_table6_alternative_forms", digits = 2)
+write_table(alt_forms, "audit_table6_alternative_forms")
 
 # Multinomial logit at the letter level: choice among nine ads with caste dummies,
 # income (thousand rupees) interacted with caste. The compensation is the income
@@ -103,17 +103,19 @@ logit_params <- bind_rows(lapply(names(mlogits), function(rc) {
     deviance_vs_saturated = 2 * (m$negll - m$saturated_negll)
   )
 }))
-write_table(logit_params, "audit_logit_parameters", digits = 4)
+write_table(logit_params, "audit_logit_parameters")
 logit_fitted <- bind_rows(lapply(names(mlogits), function(rc) {
   mutate(mlogits[[rc]]$fitted, responder_caste = rc, .before = 1)
 }))
-write_table(logit_fitted, "audit_logit_fitted_shares", digits = 3)
+write_table(logit_fitted, "audit_logit_fitted_shares")
 logit_table6 <- table6_cells |>
   rowwise() |>
-  mutate(compensation_logit_k = logit_compensation(mlogits[[responder_caste]], groom_caste, responder_caste,
-                                                   income_level)) |>
+  mutate(compensation_logit_k = logit_compensation(
+    mlogits[[responder_caste]], groom_caste, responder_caste,
+    income_level
+  )) |>
   ungroup()
-write_table(logit_table6, "audit_table6_logit", digits = 2)
+write_table(logit_table6, "audit_table6_logit")
 
 # 3. Support. Where does the implied income sit in the real-ad distribution?
 support <- compensation_table(fits) |>
@@ -127,12 +129,14 @@ income_quantiles <- tibble(
   quantile = c(0.5, 0.9, 0.95, 0.99, 1),
   real_ad_income = quantile(ads$income, c(0.5, 0.9, 0.95, 0.99, 1), na.rm = TRUE)
 )
-write_table(support, "audit_table6_support", digits = 2)
-write_table(income_quantiles, "audit_real_ad_income_quantiles", digits = 0)
+write_table(support, "audit_table6_support")
+write_table(income_quantiles, "audit_real_ad_income_quantiles")
 
 print(segments)
-print(select(alt_forms, responder_caste, groom_caste, income_level, compensation_paper_k, compensation_linear_ls_k,
-             compensation_log_k), width = 150)
+print(select(
+  alt_forms, responder_caste, groom_caste, income_level, compensation_paper_k, compensation_linear_ls_k,
+  compensation_log_k
+), width = 150)
 print(logit_fitted, n = 20)
 print(logit_params, n = 20)
 print(logit_table6)

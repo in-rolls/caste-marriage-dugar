@@ -1,3 +1,0 @@
-|    n| caste_mismatch| income_mismatch| edition_mismatch|
-|----:|--------------:|---------------:|----------------:|
-| 1366|              0|               0|                0|
