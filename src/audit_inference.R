@@ -1,5 +1,5 @@
 # Inference audit. Three questions:
-#  1. Do the standard errors and F-tests survive treating the letter, not the
+#  1. How do the standard errors and F-tests change when treating the letter, rather than the
 #     stacked row, as the unit? (cluster by letter; exact multinomial variance)
 #  2. Are the letter shares stable across the two newspaper editions, the only
 #     replication of the nine ads the design provides?

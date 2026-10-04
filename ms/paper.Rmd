@@ -579,7 +579,7 @@ attribute index separately; neither procedure supplies randomization inference o
 The lower-group reversal persists in both editions, when excluded letters are included,
 when education is omitted from the PCA, and among complete cases. Table
 \ref{tab:heterogeneity-checks} reports the high-income counts rather than a sequence of
-significance verdicts. Complete-case comparisons retain the original scores and boundaries
+significance thresholds. Complete-case comparisons retain the original scores and boundaries
 and change the sample. They therefore address sensitivity to imputation, not selection
 into reporting all attributes.
 
@@ -662,7 +662,7 @@ response curve. Interpreting them as individual or average compensation for cast
 requires additional identification. The contact model shows why observing the same letters
 can leave preference compensation different. The subgroup reversal adds an empirical
 limit: even the ranking of two ads at an observed income changes across respondents.
-It does not refute the authors' acknowledgment of heterogeneity or supply an alternative WTP.
+This is consistent with heterogeneous responses; it does not supply an alternative WTP estimate.
 
 These results support a claim about responses to advertised prospects in this marriage
 market. A monetary valuation of caste, a measure of respondents' prejudice, and the cost
