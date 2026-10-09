@@ -127,7 +127,7 @@ Letters are concentrated within caste. Income associations differ by the directi
 contact, and the highest-income compensation comparison extrapolates beyond the advertised range.
 
 Banerjee, Duflo, Ghatak and Lafortune (2013), reproduced in the sibling repository
-[`caste-marriage-banerjee`](https://github.com/in-rolls/caste-marriage-banerjee), watch the other side of the same
+[`caste_marriage_matching`](https://github.com/in-rolls/caste_marriage_matching), watch the other side of the same
 newspaper's market five years earlier: real advertisers choosing which letters to pursue. They conclude that
 caste preference is for one's own caste, not for higher castes, which is why they argue it costs little to
 indulge. The two studies observe different stages and different samples. They cannot simply be joined to identify preferences and acceptance beliefs without assumptions linking populations, periods, and decision rules.
